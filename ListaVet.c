@@ -59,6 +59,12 @@ int inserir(ListaVet* lista, int item, int pos) {
     return OK;
 }
 
+int inserirInicio(ListaVet* lista, int item)
+{
+    inserir(lista,item,0);
+    return OK;
+}
+
 int remover(ListaVet* lista, int* item, int pos) {
     if (lista == NULL)
         return ESTRUTURA_NAO_INICIALIZADA;

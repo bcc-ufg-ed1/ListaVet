@@ -19,6 +19,7 @@ int liberarLista(ListaVet* lista);
 int estahVazia(ListaVet* lista);
 int estahCheia(ListaVet* lista);
 int inserir(ListaVet* lista, int item, int pos);
+int inserirInicio(ListaVet* lista, int item);
 int remover(ListaVet* lista, int* item, int pos);
 int removerInicio(ListaVet* lista, int* item);
 int obterElemento(ListaVet* lista, int* item, int pos);
