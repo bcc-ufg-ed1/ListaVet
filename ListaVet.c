@@ -77,6 +77,7 @@ int remover(ListaVet* lista, int* item, int pos) {
     return OK;
 }
 
+/** remove do inicio **/
 int removerInicio(ListaVet* lista,int* item)
 {
     remover(ListaVet* lista,&item,0);
