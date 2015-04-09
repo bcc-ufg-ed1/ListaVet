@@ -4,7 +4,8 @@ void imprimir(ListaVet* lista) {
     int qtdeElementos;
     obterTamanho(lista, &qtdeElementos);
     printf("[");
-    for(int i = 0;i < qtdeElementos; i++) {
+    int i;
+    for(i = 0;i < qtdeElementos; i++) {
         int el;
         obterElemento(lista, &el, i);
         printf(" %d ", el);
@@ -16,32 +17,39 @@ int main() {
     ListaVet* minhaLista = criarLista();
 
     // insere o 7 no início da lista {7}
-    inserir(minhaLista, 7, 0);
+    inserirInicio(minhaLista, 7);
 
     // insere o 9 no fim da lista {7, 9}
     int tam;
     obterTamanho(minhaLista, &tam);
-    inserir(minhaLista, 9, tam);
+    inserirFim(minhaLista, 8);
 
-    // insere o 8 entre o 7 e o 9 {7, 8, 9}
-    inserir(minhaLista, 8, 1);
 
+    inserirFim(minhaLista, 9);
     imprimir(minhaLista);
+    int i,x=-1;
 
-    int i;
-    // remove o elemento da primeira posição {8, 9}
-    remover(minhaLista, &i, 0);
+    obterPosicao(minhaLista,&x,8);
+    printf("posiçao = %d\n",x);
+
+    obterElemento(minhaLista,&i,1);
+    printf("elemento = %d\n",i);
+
+    // remove o elemento final {8, 9}
+    removerFinal(minhaLista, &i);
     printf("Elemento removido: %d\n", i);
     imprimir(minhaLista);
 
-    // remove o elemento do final da lista {8}
+    //obtem o tamanho da lista
     obterTamanho(minhaLista, &tam);
-    remover(minhaLista, &i, tam - 1);
+    printf("tamanho lista = %d\n",tam);
+    //remove o primeiro
+    removerInicio(minhaLista, &i);
     printf("Elemento removido: %d\n", i);
     imprimir(minhaLista);
 
-    // remove o último elemento da lista {}
-    remover(minhaLista, &i, 0);
+    // remove o primeiro
+    removerInicio(minhaLista, &i);
     printf("Elemento removido: %d\n", i);
     imprimir(minhaLista);
 

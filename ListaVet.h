@@ -22,3 +22,8 @@ int inserir(ListaVet* lista, int item, int pos);
 int remover(ListaVet* lista, int* item, int pos);
 int obterElemento(ListaVet* lista, int* item, int pos);
 int obterTamanho(ListaVet* lista, int* tam);
+int obterPosicao(ListaVet* lista, int* pos, int x);
+int removerInicio(ListaVet* lista, int* item);
+int removerFinal(ListaVet* lista, int* item);
+int inserirInicio(ListaVet* lista, int item);
+int inserirFim(ListaVet* lista, int item);
