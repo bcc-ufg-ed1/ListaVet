@@ -32,6 +32,15 @@ int estahVazia(ListaVet* lista) {
     else return FALSE;
 }
 
+/*
+* Esta função verifica se o valor do parâmetro "pos"
+* está dentro do intervalo permitido para manipular
+* uma lista. O parâmetro "incluiUltimo" indica se o valor
+* "lista->ultimo" deve ser incluído o não na verificação.
+* Por exemplo, a função verifica se "pos <= lista->ultimo"
+* caso o valor do parâmetro "incluiUltimo" seja TRUE e
+  verifica se "pos < lista->ultimo", caso contrário.
+*/
 int verificaIndice(ListaVet* lista, int pos, int incluiUltimo) {
     if (pos < 0)
         return FALSE;
