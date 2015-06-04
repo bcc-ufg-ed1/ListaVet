@@ -21,26 +21,19 @@ int liberarLista(ListaVet* lista) {
 int estahCheia(ListaVet* lista) {
     if (lista == NULL)
         return ESTRUTURA_NAO_INICIALIZADA;
-    if (lista->ultimo == TAM_MAX) return TRUE;
-    else return FALSE;
+    if (lista->ultimo == TAM_MAX)
+        return TRUE;
+    return FALSE;
 }
 
 int estahVazia(ListaVet* lista) {
     if (lista == NULL)
         return ESTRUTURA_NAO_INICIALIZADA;
-    if (lista->ultimo == 0) return TRUE;
-    else return FALSE;
+    if (lista->ultimo == 0)
+        return TRUE;
+    return FALSE;
 }
 
-/*
-* Esta função verifica se o valor do parâmetro "pos"
-* está dentro do intervalo permitido para manipular
-* uma lista. O parâmetro "incluiUltimo" indica se o valor
-* "lista->ultimo" deve ser incluído ou não na verificação.
-* Por exemplo, a função verifica se "pos <= lista->ultimo"
-* caso o valor do parâmetro "incluiUltimo" seja TRUE e
-  verifica se "pos < lista->ultimo", caso contrário.
-*/
 int verificaIndice(ListaVet* lista, int pos, int incluiUltimo) {
     if (pos < 0)
         return FALSE;
@@ -76,7 +69,8 @@ int remover(ListaVet* lista, int* item, int pos) {
     if (!verificaIndice(lista, pos, FALSE))
         return INDICE_INVALIDO;
 
-    *item = lista->itens[pos];
+    if (item != NULL)
+        *item = lista->itens[pos];
 
     // Desloca elementos para a esquerda.
     for(int i = pos; i < (lista->ultimo - 1); i++)  {
@@ -93,7 +87,8 @@ int obterElemento(ListaVet* lista, int* item, int pos) {
         return ESTRUTURA_VAZIA;
     if (!verificaIndice(lista, pos, FALSE))
         return INDICE_INVALIDO;
-
+    if (item == NULL)
+        return PARAMETRO_INVALIDO;
     *item = lista->itens[pos];
     return OK;
 }
@@ -101,7 +96,8 @@ int obterElemento(ListaVet* lista, int* item, int pos) {
 int obterTamanho(ListaVet* lista, int* tam) {
     if (lista == NULL)
         return ESTRUTURA_NAO_INICIALIZADA;
+    if (tam == NULL)
+        return PARAMETRO_INVALIDO;
     *tam = lista->ultimo;
     return OK;
 }
-
