@@ -24,6 +24,7 @@ int estahVazia(ListaVet* lista);
 int estahCheia(ListaVet* lista);
 int inserir(ListaVet* lista, int item, int pos);
 int remover(ListaVet* lista, int* item, int pos);
+int removerInicio(ListaVet* lista, int* item);
 int obterElemento(ListaVet* lista, int* item, int pos);
 int obterTamanho(ListaVet* lista, int* tam);
 

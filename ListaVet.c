@@ -80,6 +80,12 @@ int remover(ListaVet* lista, int* item, int pos) {
     return OK;
 }
 
+/** remove do inicio **/
+int removerInicio(ListaVet* lista,int* item)
+{
+    remover(ListaVet* lista,&item,0);
+}
+
 int obterElemento(ListaVet* lista, int* item, int pos) {
     if (lista == NULL)
         return ESTRUTURA_NAO_INICIALIZADA;
